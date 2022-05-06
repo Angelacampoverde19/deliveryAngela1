@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DeliveryAngela</string>
+    <string name="user" >Usuario</string>
+    <string name="password" >Contraseña</string>
+    <string name="Login" >Entrar</string>
+
+
+</resources>
