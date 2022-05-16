@@ -3,74 +3,126 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/img"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="400dp"
-        android:layout_height="743dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="5dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="164dp">
 
-        <TextView
-            android:layout_width="434dp"
-            android:layout_height="95dp"
-            android:layout_marginBottom="150px"
-            android:drawablePadding="20dp"
-            android:gravity="center"
-            android:ems="20"
-            android:hint="Iniciar Sesión"
-            android:inputType="textPassword"
-            android:padding="20dp"
-            android:textColor="@color/black"
-            android:textSize="50sp" />
-
-        <EditText
-            android:id="@+id/editText"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/contorno"
-            android:drawableStart="@drawable/usuario"
-            android:drawablePadding="5dp"
-            android:ems="15"
-            android:hint="Usuario"
-            android:inputType="textPassword"
-            android:padding="15dp"
-            android:textColor="@color/white" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/contorno"
-            android:drawableStart="@drawable/lock"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:padding="15dp" />
+            <TextView
+                android:id="@+id/text_user_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/user"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_height"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/border_button"
-            android:padding="20dp"
-            android:shadowColor="@color/purple_500"
-            android:text="Inicie Sesión"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_height"
+                android:text="@string/password"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_height"
+                app:layout_constraintLeft_toLeftOf="@id/editTextUserName"
+                app:layout_constraintRight_toRightOf="@id/editTextUserName"
+                app:layout_constraintTop_toBottomOf="@id/editTextUserName" />
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="62dp"
 
-            />
-    </LinearLayout>
+                android:layout_marginRight="50dp"
+                android:background="@drawable/border_button"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:shadowColor="#000000"
+                android:text="I N G R E S A R"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/editTextTextPassword"
+                app:layout_constraintRight_toRightOf="@id/editTextTextPassword"
+                app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="@dimen/top_border"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="@dimen/text_height"
+                android:text="U S E R   L O G I N"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_height"
+                app:layout_constraintBottom_toTopOf="@id/text_user_label"
+                app:layout_constraintLeft_toLeftOf="@id/text_user_label"
+                app:layout_constraintRight_toRightOf="@id/text_user_label"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="60dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextUserName"
+                style="@style/the_inputs"
+                android:layout_marginTop="@dimen/text_height"
+                android:hint="@string/user"
+                app:layout_constraintLeft_toLeftOf="@id/text_user_label"
+                app:layout_constraintRight_toRightOf="@id/text_user_label"
+                app:layout_constraintTop_toBottomOf="@id/text_user_label"
+                app:startIconContentDescription="@android:string/copyUrl"
+                app:startIconDrawable="@drawable/user"
+                app:startIconTint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextUserName2"
+                    style="@style/the_inputs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/contorno"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"></com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextTextPassword"
+                style="@style/the_inputs"
+                android:layout_marginTop="@dimen/text_height"
+                android:hint="@string/password"
+                app:endIconTint="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/text"
+                app:layout_constraintRight_toRightOf="@id/text"
+                app:layout_constraintTop_toBottomOf="@id/text"
+                app:startIconContentDescription="@android:string/copyUrl"
+                app:startIconDrawable="@drawable/lock"
+                app:startIconTint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTextPassword2"
+                    style="@style/the_passwords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/contorno"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"></com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
